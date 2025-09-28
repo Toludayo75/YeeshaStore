@@ -96,6 +96,7 @@ function toggleMobileMenuFallback(e) {
     }
 }
 
+
 function ensureMobileToggle() {
     const toggle = document.getElementById('mobileMenuToggle');
     if (!toggle) return;
