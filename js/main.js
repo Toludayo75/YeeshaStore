@@ -73,6 +73,46 @@ function closeMobileMenu() {
     document.body.style.overflow = ''; // Restore scroll
 }
 
+// Resilient fallback: ensure mobile toggle works on touch devices and when other errors prevent the usual handler
+function toggleMobileMenuFallback(e) {
+    // Prevent double handling when both click and touchstart fire
+    if (e) e.preventDefault();
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggle = document.getElementById('mobileMenuToggle');
+    if (!mobileMenu || !toggle) return;
+
+    const isOpen = mobileMenu.classList.contains('active');
+    if (isOpen) {
+        // close
+        mobileMenu.classList.remove('active');
+        toggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = '';
+    } else {
+        // open
+        mobileMenu.classList.add('active');
+        toggle.innerHTML = '<i class="fas fa-times"></i>';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function ensureMobileToggle() {
+    const toggle = document.getElementById('mobileMenuToggle');
+    if (!toggle) return;
+
+    // Add both click and touchstart handlers. Use passive: false for touchstart so we can prevent default.
+    toggle.addEventListener('click', function(e) {
+        toggleMobileMenuFallback(e);
+    });
+
+    toggle.addEventListener('touchstart', function(e) {
+        toggleMobileMenuFallback(e);
+    }, { passive: false });
+}
+
+// Ensure fallback is attached after DOM is ready (this is idempotent)
+document.addEventListener('DOMContentLoaded', ensureMobileToggle);
+
 /* ===== SEARCH FUNCTIONALITY ===== */
 function initializeSearch() {
     const searchForms = document.querySelectorAll('.search-form');
@@ -497,6 +537,20 @@ function loadCategories() {
     
     // Add click handlers for category cards
     addCategoryCardClickHandlers();
+}
+
+function renderProducts(products, gridElement) {
+    if (!gridElement) return;
+    
+    if (products.length === 0) {
+        gridElement.innerHTML = '<div class="loading">No products available</div>';
+        return;
+    }
+    
+    gridElement.innerHTML = products.map(product => renderProductCard(product)).join('');
+    
+    // Add click handlers for product cards
+    addProductCardClickHandlers();
 }
 
 /* ===== CLICK HANDLERS ===== */

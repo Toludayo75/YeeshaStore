@@ -205,7 +205,7 @@ ul {
 
 /* Logo */
 .logo-img {
-    height: 50px;
+    height: 100px;
     width: auto;
 }
 
@@ -886,7 +886,7 @@ ul {
     height: 50px;
     width: auto;
     margin-bottom: var(--spacing-md);
-    filter: brightness(0) invert(1);
+
 }
 
 .footer-section p {

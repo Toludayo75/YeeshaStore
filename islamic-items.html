@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Wishlist - Yeesha Bags | Handmade Bags, Modest Wear & Islamic Items</title>
-    <meta name="description" content="Your saved products at Yeesha Bags. Keep track of your favorite handmade bags, modest wear, and Islamic items for future purchases.">
+    <title>Islamic Items - Yeesha Bags | Prayer Rugs, Wall Art & Islamic Decor</title>
+    <meta name="description" content="Shop our collection of Islamic items at Yeesha Bags. Beautiful prayer rugs, Islamic wall art, calligraphy, and home decor for the Muslim home.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="index.html" data-testid="logo-link">
-                        <img src="attached_assets/logo.png" 
+                        <img src="attached_assets/logo.png"  
                              alt="Yeesha Bags" 
                              class="logo-img"
                              data-testid="logo-image">
@@ -50,7 +50,7 @@
                         <li><a href="categories.html" data-testid="nav-categories">Categories</a></li>
                         <li><a href="bags.html" data-testid="nav-bags">Bags</a></li>
                         <li><a href="modest-wear.html" data-testid="nav-modest-wear">Modest Wear</a></li>
-                        <li><a href="islamic-items.html" data-testid="nav-islamic-items">Islamic Items</a></li>
+                        <li><a href="islamic-items.html" class="active" data-testid="nav-islamic-items">Islamic Items</a></li>
                     </ul>
                 </nav>
 
@@ -59,7 +59,7 @@
                     <form class="search-form" id="searchForm">
                         <input type="search" 
                                id="searchInput" 
-                               placeholder="Search products..." 
+                               placeholder="Search Islamic items..." 
                                data-testid="search-input">
                         <button type="submit" data-testid="search-button">
                             <i class="fas fa-search"></i>
@@ -70,7 +70,7 @@
                 <!-- Action Buttons -->
                 <div class="header-actions">
                     <!-- Wishlist -->
-                    <a href="wishlist.html" class="action-btn active" data-testid="wishlist-link">
+                    <a href="wishlist.html" class="action-btn" data-testid="wishlist-link">
                         <i class="fas fa-heart"></i>
                         <span class="badge" id="wishlistCount">0</span>
                     </a>
@@ -98,7 +98,7 @@
                 <!-- Mobile Search -->
                 <div class="mobile-search">
                     <form class="search-form">
-                        <input type="search" placeholder="Search products..." data-testid="mobile-search-input">
+                        <input type="search" placeholder="Search Islamic items..." data-testid="mobile-search-input">
                         <button type="submit" data-testid="mobile-search-button">
                             <i class="fas fa-search"></i>
                         </button>
@@ -112,7 +112,7 @@
                         <li><a href="categories.html" data-testid="mobile-nav-categories"><i class="fas fa-th-large"></i> Categories</a></li>
                         <li><a href="bags.html" data-testid="mobile-nav-bags"><i class="fas fa-shopping-bag"></i> Bags</a></li>
                         <li><a href="modest-wear.html" data-testid="mobile-nav-modest-wear"><i class="fas fa-tshirt"></i> Modest Wear</a></li>
-                        <li><a href="islamic-items.html" data-testid="mobile-nav-islamic-items"><i class="fas fa-star-and-crescent"></i> Islamic Items</a></li>
+                        <li><a href="islamic-items.html" class="active" data-testid="mobile-nav-islamic-items"><i class="fas fa-star-and-crescent"></i> Islamic Items</a></li>
                     </ul>
                 </nav>
             </div>
@@ -127,7 +127,7 @@
                 <nav class="breadcrumb-nav">
                     <a href="index.html" data-testid="breadcrumb-home">Home</a>
                     <i class="fas fa-chevron-right"></i>
-                    <span>My Wishlist</span>
+                    <span>Islamic Items</span>
                 </nav>
             </div>
         </div>
@@ -136,75 +136,19 @@
         <section class="page-header">
             <div class="container">
                 <div class="page-header-content">
-                    <h1>My Wishlist</h1>
-                    <p>Your saved items for future purchase</p>
+                    <h1>Islamic Items</h1>
+                    <p>Discover our beautiful collection of Islamic home decor, prayer accessories, and spiritual items</p>
                 </div>
             </div>
         </section>
 
-        <!-- Wishlist Content -->
-        <section class="wishlist-section">
+        <!-- Products Section -->
+        <section class="products-section">
             <div class="container">
-                <!-- Wishlist Header -->
-                <div class="wishlist-header">
-                    <div class="wishlist-info">
-                        <h2>Saved Items (<span id="wishlistItemCount">0</span>)</h2>
-                    </div>
-                    <div class="wishlist-actions">
-                        <button class="btn btn-outline" id="clearWishlistBtn" data-testid="clear-wishlist">
-                            <i class="fas fa-trash"></i>
-                            Clear All
-                        </button>
-                        <button class="btn btn-primary" id="addAllToCartBtn" data-testid="add-all-to-cart">
-                            <i class="fas fa-shopping-bag"></i>
-                            Add All to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Wishlist Items -->
-                <div class="wishlist-items" id="wishlistItems">
-                    <!-- Wishlist items will be populated by JavaScript -->
-                    <div class="empty-wishlist" id="emptyWishlist">
-                        <div class="empty-wishlist-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Your wishlist is empty</h3>
-                        <p>Save items you love by clicking the heart icon on any product!</p>
-                        <a href="categories.html" class="btn btn-primary" data-testid="browse-products">
-                            <i class="fas fa-shopping-bag"></i>
-                            Browse Products
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Continue Shopping -->
-                <div class="continue-shopping" id="continueShopping" style="display: none;">
-                    <a href="categories.html" class="btn btn-outline" data-testid="continue-shopping-btn">
-                        <i class="fas fa-arrow-left"></i>
-                        Continue Shopping
-                    </a>
-                </div>
-
-                <!-- Recently Viewed -->
-                <div class="recently-viewed" id="recentlyViewed">
-                    <div class="section-header">
-                        <h2>Recently Viewed</h2>
-                        <p>Items you've looked at recently</p>
-                    </div>
-                    <div class="products-grid" id="recentlyViewedGrid">
-                        <!-- Recently viewed products will be populated by JavaScript -->
-                    </div>
-                </div>
-
-                <!-- Recommended Products -->
-                <div class="recommended-products" id="recommendedProducts">
-                    <div class="section-header">
-                        <h2>You May Also Like</h2>
-                        <p>Discover more beautiful handcrafted items</p>
-                    </div>
-                    <div class="products-grid" id="recommendedProductsGrid">
-                        <!-- Recommended products will be populated by JavaScript -->
+                <div class="products-layout">
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="islamicItemsProductsGrid" data-category="islamic-items">
+                        <!-- Products will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
@@ -366,9 +310,37 @@
         </div>
     </footer>
 
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+                <button class="close-modal" id="closeCartModal" data-testid="close-cart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-modal-body" id="cartModalBody">
+                <!-- Cart content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/wishlist.js"></script>
+    <script>
+        // Category-specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            loadIslamicItemsProducts();
+        });
+        
+        function loadIslamicItemsProducts() {
+            const grid = document.getElementById('islamicItemsProductsGrid');
+            if (!grid) return;
+            
+            const products = window.YeeshaData.getProductsByCategory('islamic-items');
+            renderProducts(products, grid);
+        }
+    </script>
 </body>
 </html>
