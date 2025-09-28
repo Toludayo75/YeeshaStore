@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Yeesha Bags | Handmade Bags, Modest Wear & Islamic Items</title>
+    <meta name="description" content="Browse our categories of handmade bags, modest wear, and Islamic items at Yeesha Bags. Find the perfect products for your modest lifestyle.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <p>
+                <i class="fas fa-shipping-fast"></i>
+                FREE & FAST SHIPPING ON ALL ORDERS OVER $50
+            </p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" data-testid="logo-link">
+                        <img src="attached_assets/WhatsApp Image 2025-09-27 at 10.21.06_dce43217_1759046114384.jpg" 
+                             alt="Yeesha Bags" 
+                             class="logo-img"
+                             data-testid="logo-image">
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" data-testid="nav-home">Home</a></li>
+                        <li><a href="categories.html" class="active" data-testid="nav-categories">Categories</a></li>
+                        <li><a href="bags.html" data-testid="nav-bags">Bags</a></li>
+                        <li><a href="modest-wear.html" data-testid="nav-modest-wear">Modest Wear</a></li>
+                        <li><a href="islamic-items.html" data-testid="nav-islamic-items">Islamic Items</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <form class="search-form" id="searchForm">
+                        <input type="search" 
+                               id="searchInput" 
+                               placeholder="Search products..." 
+                               data-testid="search-input">
+                        <button type="submit" data-testid="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="header-actions">
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="action-btn" data-testid="wishlist-link">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" id="wishlistCount">0</span>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="action-btn" data-testid="cart-link">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge" id="cartCount">0</span>
+                    </a>
+
+                    <!-- Profile -->
+                    <a href="profile.html" class="action-btn" data-testid="profile-link">
+                        <i class="fas fa-user"></i>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" data-testid="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <!-- Mobile Search -->
+                <div class="mobile-search">
+                    <form class="search-form">
+                        <input type="search" placeholder="Search products..." data-testid="mobile-search-input">
+                        <button type="submit" data-testid="mobile-search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <nav class="mobile-nav">
+                    <ul>
+                        <li><a href="index.html" data-testid="mobile-nav-home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="categories.html" class="active" data-testid="mobile-nav-categories"><i class="fas fa-th-large"></i> Categories</a></li>
+                        <li><a href="bags.html" data-testid="mobile-nav-bags"><i class="fas fa-shopping-bag"></i> Bags</a></li>
+                        <li><a href="modest-wear.html" data-testid="mobile-nav-modest-wear"><i class="fas fa-tshirt"></i> Modest Wear</a></li>
+                        <li><a href="islamic-items.html" data-testid="mobile-nav-islamic-items"><i class="fas fa-star-and-crescent"></i> Islamic Items</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <nav class="breadcrumb-nav">
+                    <a href="index.html" data-testid="breadcrumb-home">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Categories</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1>Shop by Category</h1>
+                    <p>Discover our carefully curated collections designed for the modern Muslim lifestyle</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories & Filters -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="categories-layout">
+                    <!-- Sidebar Filters -->
+                    <div class="filters-sidebar">
+                        <div class="filter-group">
+                            <h3>Filter by Category</h3>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="all" checked data-testid="filter-all">
+                                    <span>All Categories</span>
+                                    <span class="count" id="count-all">8</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="bags" data-testid="filter-bags">
+                                    <span>Handmade Bags</span>
+                                    <span class="count" id="count-bags">3</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="modest-wear" data-testid="filter-modest-wear">
+                                    <span>Modest Wear</span>
+                                    <span class="count" id="count-modest-wear">3</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="islamic-items" data-testid="filter-islamic-items">
+                                    <span>Islamic Items</span>
+                                    <span class="count" id="count-islamic-items">2</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Filter by Price</h3>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="all" checked data-testid="filter-price-all">
+                                    <span>All Prices</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="under-50" data-testid="filter-price-under-50">
+                                    <span>Under $50</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="50-100" data-testid="filter-price-50-100">
+                                    <span>$50 - $100</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="over-100" data-testid="filter-price-over-100">
+                                    <span>Over $100</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Other Filters</h3>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="in-stock" checked data-testid="filter-in-stock">
+                                    <span>In Stock Only</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="on-sale" data-testid="filter-on-sale">
+                                    <span>On Sale</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="new" data-testid="filter-new">
+                                    <span>New Arrivals</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline clear-filters" data-testid="clear-filters">
+                            <i class="fas fa-times"></i>
+                            Clear All Filters
+                        </button>
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="products-main">
+                        <!-- Sort & View Options -->
+                        <div class="products-toolbar">
+                            <div class="results-info">
+                                <span id="results-count">Showing 8 products</span>
+                            </div>
+                            
+                            <div class="toolbar-controls">
+                                <div class="sort-controls">
+                                    <label for="sortSelect">Sort by:</label>
+                                    <select id="sortSelect" data-testid="sort-select">
+                                        <option value="featured">Featured</option>
+                                        <option value="name">Name A-Z</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                        <option value="rating">Customer Rating</option>
+                                        <option value="newest">Newest First</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="view-controls">
+                                    <button class="view-btn active" data-view="grid" data-testid="view-grid">
+                                        <i class="fas fa-th"></i>
+                                    </button>
+                                    <button class="view-btn" data-view="list" data-testid="view-list">
+                                        <i class="fas fa-list"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="products-grid" id="productsGrid">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                                <p>Loading products...</p>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination" id="pagination">
+                            <button class="pagination-btn" data-page="prev" disabled data-testid="pagination-prev">
+                                <i class="fas fa-chevron-left"></i>
+                                Previous
+                            </button>
+                            <div class="pagination-numbers">
+                                <button class="pagination-btn active" data-page="1">1</button>
+                            </div>
+                            <button class="pagination-btn" data-page="next" disabled data-testid="pagination-next">
+                                Next
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Newsletter Section -->
+        <div class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h3>Join Our Newsletter</h3>
+                    <p>Get updates on new arrivals, exclusive offers, and Islamic lifestyle tips</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" 
+                               placeholder="Enter your email" 
+                               required 
+                               data-testid="newsletter-email">
+                        <button type="submit" data-testid="newsletter-subscribe">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-section">
+                        <img src="attached_assets/WhatsApp Image 2025-09-27 at 10.21.06_dce43217_1759046114384.jpg" 
+                             alt="Yeesha Bags" 
+                             class="footer-logo"
+                             data-testid="footer-logo">
+                        <p>Crafting beautiful handmade bags, modest wear, and Islamic items with love and tradition. 
+                           Serving the global Muslim community with quality and elegance.</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Islamic District, Modest City, MC 12345</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@yeeshabags.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Care -->
+                    <div class="footer-section">
+                        <h4>Customer Care</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns & Exchanges</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                            <li><a href="#">Care Instructions</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Information -->
+                    <div class="footer-section">
+                        <h4>Information</h4>
+                        <ul>
+                            <li><a href="#">About Yeesha</a></li>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Artisan Partners</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Community -->
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Style Gallery</a></li>
+                            <li><a href="#">Modest Fashion Blog</a></li>
+                            <li><a href="#">Customer Reviews</a></li>
+                            <li><a href="#">Affiliate Program</a></li>
+                        </ul>
+                        <div class="social-media">
+                            <h5>Follow Us</h5>
+                            <div class="social-links">
+                                <a href="#" data-testid="social-facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" data-testid="social-instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" data-testid="social-twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" data-testid="social-tiktok"><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="trust-indicators">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="trust-text">
+                            <h5>Free Delivery</h5>
+                            <p>Orders over $50</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <div class="trust-text">
+                            <h5>30 Days Return</h5>
+                            <p>Money back guarantee</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="trust-text">
+                            <h5>Secure Payment</h5>
+                            <p>SSL protected</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="trust-text">
+                            <h5>24/7 Support</h5>
+                            <p>Always here to help</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>© 2024 Yeesha Bags. All rights reserved. | Crafted with ❤️ for the Muslim community</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/categories.js"></script>
+</body>
+</html>
