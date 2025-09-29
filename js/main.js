@@ -181,7 +181,7 @@ function showSearchSuggestions(query, inputElement) {
                     <img src="${product.image}" alt="${product.name}">
                     <div class="suggestion-text">
                         <div class="suggestion-name">${product.name}</div>
-                        <div class="suggestion-price">$${product.price}</div>
+                        <div class="suggestion-price">N${product.price}</div>
                     </div>
                 </div>
             `).join('')}
@@ -316,7 +316,7 @@ function loadCartContent() {
                         <h4>${product.name}</h4>
                         ${item.selectedColor ? `<p>Color: ${item.selectedColor}</p>` : ''}
                         ${item.selectedSize ? `<p>Size: ${item.selectedSize}</p>` : ''}
-                        <div class="cart-item-price">$${product.price.toFixed(2)}</div>
+                        <div class="cart-item-price">N${product.price.toFixed(2)}</div>
                     </div>
                     <div class="cart-item-controls">
                         <div class="quantity-controls">
@@ -340,7 +340,7 @@ function loadCartContent() {
         </div>
         <div class="cart-footer">
             <div class="cart-total">
-                <h3>Total: $${total.toFixed(2)}</h3>
+                <h3>Total: N${total.toFixed(2)}</h3>
             </div>
             <div class="cart-actions">
                 <button class="btn btn-outline" onclick="closeCartModalHandler()">Continue Shopping</button>
@@ -418,8 +418,8 @@ function renderProductCard(product) {
                 <h3 class="product-name" data-testid="product-name-${product.id}">${product.name}</h3>
                 
                 <div class="product-price">
-                    <span class="current-price" data-testid="product-price-${product.id}">$${product.price.toFixed(2)}</span>
-                    ${product.originalPrice ? `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                    <span class="current-price" data-testid="product-price-${product.id}">N${product.price.toFixed(2)}</span>
+                    ${product.originalPrice ? `<span class="original-price">N${product.originalPrice.toFixed(2)}</span>` : ''}
                 </div>
                 
                 <div class="stock-status ${product.inStock ? 'in-stock' : 'out-of-stock'}">
@@ -789,7 +789,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* ===== UTILITY FUNCTIONS ===== */
 function formatPrice(price) {
-    return `$${price.toFixed(2)}`;
+    return `N${price.toFixed(2)}`;
 }
 
 function formatDate(dateString) {
