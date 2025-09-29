@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign In - Yeesha Bags</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="auth-page container">
+    <div class="auth-card">
+      <h1>Sign In</h1>
+      <p class="lead">Please sign in to continue to the checkout.</p>
+
+      <form id="loginForm" class="auth-form">
+        <label>
+          Email
+          <input type="email" id="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          Password
+          <input type="password" id="password" required placeholder="password">
+        </label>
+        <div class="auth-actions">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+          <a href="signup.html" class="btn btn-ghost">Create account</a>
+        </div>
+      </form>
+
+      <p class="auth-footer-note">Demo only — no backend. Signing in stores a demo user locally.</p>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const qs = new URLSearchParams(location.search);
+      const next = qs.get('next') || 'index.html';
+
+      // If already logged in, redirect
+      try {
+        if (localStorage.getItem('user') || sessionStorage.getItem('user')) {
+          location.href = next;
+        }
+      } catch(e) {}
+
+      document.getElementById('loginForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        if (!email || !password) return alert('Enter email and password');
+
+        // Simple demo auth: store user; in real app validate credentials server-side
+        const user = { id: 'user-'+Date.now(), email: email, name: email.split('@')[0] };
+        try { localStorage.setItem('user', JSON.stringify(user)); } catch(e) {}
+
+        location.href = next;
+      });
+    })();
+  </script>
+</body>
+</html>

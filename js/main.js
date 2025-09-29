@@ -366,10 +366,40 @@ function removeFromCart(productId, selectedColor, selectedSize) {
 }
 
 function goToCheckout() {
-    // In a real app, redirect to checkout page
+    // Close cart visual
     closeCartModalHandler();
     window.YeeshaData.showNotification('Redirecting to checkout...', 'info');
-    // window.location.href = 'checkout.html';
+
+    // Helper to detect demo/local auth
+    function isDemoLoggedIn() {
+        try { return !!localStorage.getItem('user') || !!sessionStorage.getItem('user'); } catch (e) { return false; }
+    }
+
+    // Prefer Firebase auth if available (future-proof). If not available, use demo localStorage.
+    var isLogged = false;
+    try {
+        if (window.firebase && window.firebase.auth) {
+            // compat SDK may expose firebase.auth(); for modular SDK we won't have global firebase
+            var fbUser = window.firebase.auth().currentUser;
+            isLogged = !!fbUser;
+        } else if (window.auth && window.auth.currentUser) {
+            // modular init may export `auth` globally — handle when firebase-init sets window.auth
+            isLogged = !!window.auth.currentUser;
+        } else {
+            isLogged = isDemoLoggedIn();
+        }
+    } catch (err) {
+        isLogged = isDemoLoggedIn();
+    }
+
+    if (!isLogged) {
+        // Redirect to login with next param so user returns to checkout after signing in
+        window.location.href = 'login.html?next=' + encodeURIComponent('checkout.html');
+        return;
+    }
+
+    // If logged in, go to checkout
+    window.location.href = 'checkout.html';
 }
 
 /* ===== PRODUCT GRID RENDERING ===== */

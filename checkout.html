@@ -410,5 +410,23 @@
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
     <script src="js/checkout.js"></script>
+        <script>
+            // Ensure the place order button opens the simulated payment modal
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.getElementById('checkoutForm');
+                if (!form) return;
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    // Try to open the modal created by js/checkout.js
+                    var payTriggers = document.querySelectorAll('#payNow, .checkout-pay, [data-action="pay"], .place-order-btn');
+                    var opened = false;
+                    payTriggers.forEach(function (t) { if (t && typeof t.click === 'function') { t.click(); opened = true; } });
+                    if (!opened) {
+                        // fallback: dispatch a click on body to ensure modal script picks up
+                        var ev = new Event('click'); document.body.dispatchEvent(ev);
+                    }
+                });
+            });
+        </script>
 </body>
 </html>
